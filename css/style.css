@@ -10,7 +10,8 @@ Dark green: #28b485
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 body {
@@ -24,6 +25,19 @@ body {
 
 .header {
     height: 95vh;
+    background-image: -webkit-gradient( linear,
+    left top, right bottom,
+    from(rgb(126, 213, 111, 0.8)),
+    to(rgb(85, 197, 122, 0.8))),
+    url(../img/hero.jpg);
+    background-image: -webkit-linear-gradient( left top,
+    rgb(126, 213, 111, 0.8),
+    rgb(85, 197, 122, 0.8)),
+    url(../img/hero.jpg);
+    background-image: -o-linear-gradient( left top,
+    rgb(126, 213, 111, 0.8),
+    rgb(85, 197, 122, 0.8)),
+    url(../img/hero.jpg);
     background-image: linear-gradient( to right bottom,
     rgb(126, 213, 111, 0.8),
     rgb(85, 197, 122, 0.8)),
@@ -32,7 +46,9 @@ body {
     background-position: top;
     position: relative;
 
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+            clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
 
 .logo-box {
@@ -49,7 +65,9 @@ body {
     position: absolute;
     top: 40%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
     text-align: center;
 }
 
@@ -57,7 +75,9 @@ body {
     color: #fff;
     text-transform: uppercase;
 
-    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+            backface-visibility: hidden;
     margin-bottom: 60px;
 }
 
@@ -67,7 +87,9 @@ body {
     font-weight: 400;
     letter-spacing: 35px;
 
-    animation: moveInLeft 1s ease-out;
+    -webkit-animation: moveInLeft 1s ease-out;
+
+            animation: moveInLeft 1s ease-out;
 }
 
 .heading-primary-sub {
@@ -76,50 +98,112 @@ body {
     font-weight: 700;
     letter-spacing: 19px;
 
-    animation: moveInRight 1s ease-out;
+    -webkit-animation: moveInRight 1s ease-out;
+
+            animation: moveInRight 1s ease-out;
+}
+
+@-webkit-keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(-100px);
+                transform: translateX(-100px);
+    }
+
+    80% {
+        -webkit-transform: translate(10px);
+                transform: translate(10px);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translate(0);
+                transform: translate(0);
+    }
 }
 
 @keyframes moveInLeft {
     0% {
         opacity: 0;
-        transform: translateX(-100px);
+        -webkit-transform: translateX(-100px);
+                transform: translateX(-100px);
     }
 
     80% {
-        transform: translate(10px);
+        -webkit-transform: translate(10px);
+                transform: translate(10px);
     }
 
     100% {
         opacity: 1;
-        transform: translate(0);
+        -webkit-transform: translate(0);
+                transform: translate(0);
+    }
+}
+
+@-webkit-keyframes moveInRight {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(100px);
+                transform: translateX(100px);
+    }
+
+    80% {
+        -webkit-transform: translate(-10px);
+                transform: translate(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translate(0);
+                transform: translate(0);
     }
 }
 
 @keyframes moveInRight {
     0% {
         opacity: 0;
-        transform: translateX(100px);
+        -webkit-transform: translateX(100px);
+                transform: translateX(100px);
     }
 
     80% {
-        transform: translate(-10px);
+        -webkit-transform: translate(-10px);
+                transform: translate(-10px);
     }
 
     100% {
         opacity: 1;
-        transform: translate(0);
+        -webkit-transform: translate(0);
+                transform: translate(0);
+    }
+}
+
+@-webkit-keyframes moveInButton {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(40px);
+                transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translate(0);
+                transform: translate(0);
     }
 }
 
 @keyframes moveInButton {
     0% {
         opacity: 0;
-        transform: translateY(40px);
+        -webkit-transform: translateY(40px);
+                transform: translateY(40px);
     }
 
     100% {
         opacity: 1;
-        transform: translate(0);
+        -webkit-transform: translate(0);
+                transform: translate(0);
     }
 }
 
@@ -130,19 +214,28 @@ body {
     padding: 15px 40px;
     display: inline-block;
     border-radius: 100px;
+    -webkit-transition: all .2;
+    -o-transition: all .2;
     transition: all .2;
     position:relative;
-    animation: moveInButton 1s ease-out;
+    -webkit-animation: moveInButton 1s ease-out;
+            animation: moveInButton 1s ease-out;
 }
 
 .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+    -webkit-transform: translateY(-3px);
+        -ms-transform: translateY(-3px);
+            transform: translateY(-3px);
+    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
 }
 
 .btn:active {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    -webkit-transform: translateY(-1px);
+        -ms-transform: translateY(-1px);
+            transform: translateY(-1px);
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
 }
 
 .btn-white {
@@ -160,6 +253,8 @@ body {
     top:0;
     left:0;
     z-index:-1;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
     transition: all .4s;
 }
 
@@ -168,15 +263,17 @@ body {
 }
 
 .btn:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
+    -webkit-transform: scaleX(1.4) scaleY(1.6);
+        -ms-transform: scaleX(1.4) scaleY(1.6);
+            transform: scaleX(1.4) scaleY(1.6);
     opacity:0;
 }
 
 .btn-animated {
-    animation: moveInButton .5s ease-out .75s;
-    animation-fill-mode: backwards;
+    -webkit-animation: moveInButton .5s ease-out .75s;
+            animation: moveInButton .5s ease-out .75s;
+    -webkit-animation-fill-mode: backwards;
+            animation-fill-mode: backwards;
 }
-
-
 
 
